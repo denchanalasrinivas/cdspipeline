@@ -25,16 +25,16 @@ stages:
  - stage: test
    displayName: test
    jobs:
-   - job:
-     pool:
-      vmImage: ubuntu-latest
-      steps:
-      - task: PowerShell@2
-        inputs:
-          displayName: 'RunningStage1_job1_Task'
-          targetType: 'inline'
-          script: |
-            Write-Host "hi test task"
+    - job:
+      pool:
+        vmImage: ubuntu-latest
+        steps:
+        - task: PowerShell@2
+          inputs:
+            displayName: 'RunningStage1_job1_Task'
+            targetType: 'inline'
+            script: |
+              Write-Host "hi test task"
  
  - ${{ each job in parameters.StageSets }}:
 
@@ -42,13 +42,13 @@ stages:
    dependsOn: test
    displayName: "${{ job }} Deploy"
    jobs:
-   - job: Stage1
-     displayName: Stage1_job1_${{ job }}
-     pool: 
-      vmImage: ubuntu-latest
-      steps:
-      - task: PowerShell@2
-        inputs:
-          targetType: 'inline'
-          script: |
-            Write-Host "Hello World"
+    - job: Stage1
+      displayName: Stage1_job1_${{ job }}
+      pool: 
+        vmImage: ubuntu-latest
+        steps:
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: |
+             Write-Host "Hello World"
