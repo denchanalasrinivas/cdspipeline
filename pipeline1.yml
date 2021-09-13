@@ -1,9 +1,3 @@
-resources:
- repositories:
- - repository: DevopsTestProject1
-   type: git
-   name: DevopsTestProject1
-   ref: main
 trigger: none
 variables:
    - name: isFullSignoff
