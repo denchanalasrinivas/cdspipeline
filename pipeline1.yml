@@ -20,7 +20,7 @@ parameters:
    default: ['Set1','Set2','Set3','Set4','Set5','Set6']
  - name: StageSets
    type: object
-   default: ['Set1','Set2','Set3','Set4','Set5']
+   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
 stages:
  - stage: test
    displayName: test
@@ -52,4 +52,4 @@ stages:
            inputs:
            targetType: 'inline'
            script: |
-             'Write-Host "hi " RunningStage1_job1_Task${{ job }}  '
+             'Write-Host "hello world " RunningStage1_job1_Task${{ job }}  '
