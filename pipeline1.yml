@@ -1,10 +1,12 @@
 trigger: none
 variables:
-- name: isFullSignoff
-  value: true
-- name:  orgsCount
-  value: '1,2,3'
-   
+  - name: isFullSignoff
+    value: true
+  - name:  orgsCount
+    value:
+      -1
+      -2
+      -3
 
 parameters:
  - name: orgsCount
@@ -15,10 +17,10 @@ parameters:
    default: true
  - name: TestSets
    type: object
-   default: ['TestSet1','TestSet2','TestSet3','TestSet4','TestSet5','TestSet6']
+   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
  - name: StageSets
    type: object
-   default: ['StageSet1','StageSet2','StageSet3','StageSet4','StageSet5','StageSet6']
+   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
 stages:
  - stage: test
    displayName: test
@@ -32,7 +34,7 @@ stages:
          inputs:
          targetType: 'inline'
          script: |
-           'Write-Host "hello  " RunningStage1_job1_Task$  '    
+           'Write-Host "hi " RunningStage1_job1_Task$  '    
  
  - ${{ each job in parameters.StageSets }}:
 
