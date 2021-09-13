@@ -40,11 +40,11 @@ stages:
 
  - stage: TipPrgprovision_${{ job }}
    dependsOn: test
-    displayName: "${{ job }} Deploy"
-    jobs:
-      - job: Stage1
-        displayName: Stage1_job1_${{ job }}
-    pool: 
+   displayName: "${{ job }} Deploy"
+   jobs:
+   - job: Stage1
+     displayName: Stage1_job1_${{ job }}
+     pool: 
         vmImage: ubuntu-latest
         steps:
         - task: PowerShell@2
