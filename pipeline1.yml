@@ -38,7 +38,7 @@ stages:
  
  - ${{ each job in parameters.StageSets }}:
 
-  - stage: TipPrgprovision_${{ job }}
+ - stage: TipPrgprovision_${{ job }}
     dependsOn: test
     displayName: "${{ job }} Deploy"
     jobs:
