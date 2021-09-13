@@ -34,7 +34,7 @@ stages:
          inputs:
          targetType: 'inline'
          script: |
-           Write-Host "hi test task"   
+           Write-Host "hi test task"
  
  - ${{ each job in parameters.StageSets }}:
 
@@ -50,5 +50,5 @@ stages:
           - task: PowerShell@2
             inputs:
               targetType: 'inline'
-              script: |                           
+              script: |
                 Write-Host "Hello World"
