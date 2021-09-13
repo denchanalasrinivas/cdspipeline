@@ -47,9 +47,8 @@ stages:
      pool: 
          vmImage: ubuntu-latest
          steps:
-         - task: PowerShell@2
-           displayName: RunningStage1_job1_Task
-           inputs:
-           targetType: 'inline'
-           script: |
-              Write-Host "hello world  RunningStage1_job1_Task${{ job }} "  
+          - task: PowerShell@2
+            inputs:
+              targetType: 'inline'
+              script: |                           
+                Write-Host "Hello World"
