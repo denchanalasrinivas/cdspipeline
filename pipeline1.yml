@@ -1,7 +1,7 @@
 trigger: none
 variables:
 - name: isFullSignoff
-  value: false
+  value: true
 - name:  orgsCount
   value:
     -1
@@ -14,7 +14,7 @@ parameters:
    default: [1,2,3,4,5,6] #Todo: Better way to pass the required number orgs as a object??
  - name: isFullSignoff
    type: boolean
-   default: true
+   default: false
  - name: TestSets
    type: object
    default: ['Set1','Set2','Set3','Set4','Set5','Set6']
