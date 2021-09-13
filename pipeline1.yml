@@ -31,10 +31,10 @@ stages:
        steps:
        - task: PowerShell@2
          inputs:
-         displayName: 'RunningStage1_job1_Task'
-         targetType: 'inline'
-         script: |
-           Write-Host "hi test task"
+           displayName: 'RunningStage1_job1_Task'
+           targetType: 'inline'
+           script: |
+             Write-Host "hi test task"
  
  - ${{ each job in parameters.StageSets }}:
 
