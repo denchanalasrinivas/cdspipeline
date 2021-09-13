@@ -36,7 +36,7 @@ stages:
             script: |
               Write-Host "hi test task"
  
- - ${{ each job in parameters.StageSets }}:
+ - ${{ each job in parameters.StageSets }}
 
  - stage: TipPrgprovision_${{ job }}
    dependsOn: test
