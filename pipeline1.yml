@@ -34,7 +34,7 @@ stages:
          inputs:
          targetType: 'inline'
          script: |
-           'Write-Host "hi " RunningStage1_job1_Task$  '    
+           Write-Host "hi test task"   
  
  - ${{ each job in parameters.StageSets }}:
 
@@ -52,4 +52,4 @@ stages:
            inputs:
            targetType: 'inline'
            script: |
-             'Write-Host "hello world " RunningStage1_job1_Task${{ job }}  '
+              Write-Host "hello world  RunningStage1_job1_Task${{ job }} "  
