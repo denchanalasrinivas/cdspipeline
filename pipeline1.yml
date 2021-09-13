@@ -6,14 +6,13 @@ resources:
    ref: main
 trigger: none
 variables:
- 
-- name: isFullSignoff
-  value: true
-- name:  orgsCount
-  value:
-    -1
-    -2
-    -3
+   - name: isFullSignoff
+     value: true
+   - name:  orgsCount
+     value:
+        -1
+        -2
+        -3
 parameters:
  - name: orgsCount
    type: object
