@@ -48,6 +48,7 @@ stages:
           vmImage: 'ubuntu-latest'
        steps:
         - task: PowerShell@2
+          displayName: 'powershell script'
           inputs:
            targetType: 'inline'
            script: |
