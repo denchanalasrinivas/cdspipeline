@@ -1,0 +1,63 @@
+resources:
+ repositories:
+ - repository: DevopsTestProject1
+   type: git
+   name: DevopsTestProject1
+   ref: main
+trigger: none
+variables:
+ value: '91bee3d9-0c15-4f17-8624-c92bb8b36ead'
+- name: client_id
+ value: '51f81489-12ee-4a9e-aaae-a2591f45987d'
+- name: isFullSignoff
+ value: true
+- name:  orgsCount
+ value:
+  -1
+  -2
+  -3
+parameters:
+ - name: orgsCount
+   type: object
+   default: [1,2,3,4,5,6] #Todo: Better way to pass the required number orgs as a object??
+ - name: isFullSignoff
+   type: boolean
+   default: true
+ - name: TestSets
+   type: object
+   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
+ - name: StageSets
+   type: object
+   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
+stages:
+ - stage: test
+   displayName: test
+   jobs:
+   - job:
+   pool:
+       vmImage: ubuntu-latest
+       steps:
+       - task: PowerShell@2
+         displayName: RunningStage1_job1_Task
+         inputs:
+         targetType: 'inline'
+         script: |
+           'Write-Host "hi " RunningStage1_job1_Task$  '    
+ 
+ - ${{ each job in parameters.StageSets }}:
+
+   - stage: TipPrgprovision_${{ job }}
+     dependsOn: test
+     displayName: "${{ job }} Deploy"
+     jobs:
+       - job: Stage1
+         displayName: Stage1_job1_${{ job }}
+     pool: 
+         vmImage: ubuntu-latest
+         steps:
+         - task: PowerShell@2
+           displayName: RunningStage1_job1_Task
+           inputs:
+           targetType: 'inline'
+           script: |
+             'Write-Host "hi " RunningStage1_job1_Task${{ job }}  '
