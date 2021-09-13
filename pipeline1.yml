@@ -3,10 +3,8 @@ variables:
 - name: isFullSignoff
   value: true
 - name:  orgsCount
-  value:
-    -1
-    -2
-    -3
+  value: '1,2,3'
+   
 
 parameters:
  - name: orgsCount
