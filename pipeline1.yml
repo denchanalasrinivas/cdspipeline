@@ -30,7 +30,7 @@ stages:
        vmImage: ubuntu-latest
        steps:
        - task: PowerShell@2
-         displayName: RunningStage1_job1_Task
+         displayName: 'RunningStage1_job1_Task'
          inputs:
          targetType: 'inline'
          script: |
