@@ -6,16 +6,14 @@ resources:
    ref: main
 trigger: none
 variables:
- value: '91bee3d9-0c15-4f17-8624-c92bb8b36ead'
-- name: client_id
- value: '51f81489-12ee-4a9e-aaae-a2591f45987d'
+ 
 - name: isFullSignoff
- value: true
+  value: true
 - name:  orgsCount
- value:
-  -1
-  -2
-  -3
+  value:
+    -1
+    -2
+    -3
 parameters:
  - name: orgsCount
    type: object
