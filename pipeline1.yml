@@ -1,12 +1,13 @@
 trigger: none
 variables:
 - name: isFullSignoff
-  value: true
+  value: false
 - name:  orgsCount
   value:
     -1
     -2
     -3
+
 parameters:
  - name: orgsCount
    type: object
