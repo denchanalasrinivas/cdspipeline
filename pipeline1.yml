@@ -17,10 +17,10 @@ parameters:
    default: true
  - name: TestSets
    type: object
-   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
+   default: ['TestSet1','TestSet2','TestSet3','TestSet4','TestSet5','TestSet6']
  - name: StageSets
    type: object
-   default: ['Set1','Set2','Set3','Set4','Set5','Set6']
+   default: ['StageSet1','StageSet2','StageSet3','StageSet4','StageSet5','StageSet6']
 stages:
  - stage: test
    displayName: test
